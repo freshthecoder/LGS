@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+            overflow: hidden; /* To handle flying characters */
+        }
+
+        .content {
+            padding-top: 20px;
+            position: relative;
+            z-index: 10; /* To make sure content stays on top */
+        }
+
+        h1, h2 {
+            margin: 0;
+            text-shadow: 2px 2px 8px #000;
+            letter-spacing: 0.2em; /* Adding a little gap between letters */
+        }
+
+        /* Style for LGS (Large Uppercase) */
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 12vw;
+            color: white;
+            text-transform: uppercase; /* All letters in uppercase */
+        }
+
+        /* Style for L (Large first letter, rest lowercase) */
+        h2 {
+            font-family: 'Bangers', cursive;
+            font-size: 6vw;
+            color: white;
+            margin-top: 20px; /* Adding margin to move it down */
+            text-transform: capitalize; /* First letter of each word is capitalized */
+        }
+
+        button {
+            width: 80%;
+            padding: 20px;
+            font-size: 5vw;
+            font-family: 'Bangers', cursive;
+            color: black; /* Black text */
+            background-color: white; /* White background */
+            border: none;
+            border-radius: 30px; /* More rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #f0f0f0; /* Light grey on hover */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            font-size: 10px; /* Smaller font size */
+            color: white;
+            font-family: 'Bangers', cursive; /* Same font as above */
+        }
+
+        .footer p {
+            margin: 2px 0;
+        }
+
+        /* Starry Background */
+        @keyframes move {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(1000px); }
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            animation: move 10s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>LGS</h1> <!-- Updated to LGS -->
+        <h2>Global Village (24-25) VI-D</h2> <!-- L: Large first letter -->
+        <button onclick="openGitHub()">GitHub</button>
+        <button onclick="discordOfficial()">LGS's Official Website</button>
+    </div>
+
+    <div class="footer">
+        <p>2024 Ibrahim Abid</p> <!-- Updated footer -->
+        <p>Email me at freshthechamp@gmail.com for support</p>
+    </div>
+
+    <!-- Starry Background -->
+    <script>
+        function createStars() {
+            for (let i = 0; i < 100; i++) {
+                let stars = document.createElement('div');
+                stars.className = 'star';
+                stars.style.top = `${Math.random() * 100}vh`;
+                stars.style.left = `${Math.random() * 100}vw`;
+                stars.style.animationDuration = `${Math.random() * 5 + 10}s`;
+                document.body.appendChild(stars);
+            }
+        }
+
+        function openGitHub() {
+            window.location.href = 'https://github.com/freshthecoder';
+        }
+
+        function discordOfficial() {
+            window.location.href = 'https://lgs.edu.pk';
+        }
+
+        createStars();
+    </script>
+</body>
+</html>
